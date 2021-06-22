@@ -1,19 +1,18 @@
 const fibonacci = function (fibonacciNumber) {
-    //Return "OOPS" if number is < 1
-    let n = Number(fibonacciNumber)
-    if (n < 1) {return "OOPS"}
-    let fibonacciArray = [1, 1]
-    //Make a loop that adds the current number to the previous until i = n
+    let num = Number(fibonacciNumber)
+    if (num < 1) {return "OOPS"}
 
+    let a = 1, b = 0, temp;
 
-    for (let i = 2; i < n; i += 1){
-        console.log(fibonacciArray);
-        newValue = (fibonacciArray[i - 1] + fibonacciArray[i - 2])
-        fibonacciArray.push(newValue)
-        console.log(fibonacciArray);
+    while (num >= 1) {
+        temp = a;
+        a = a + b;
+        b = temp;
+        num--;
     }
-    console.log('Final Value', fibonacciArray[n - 1]);
-    return fibonacciArray[n - 1];
+
+    return b;
+
 
 
 };
